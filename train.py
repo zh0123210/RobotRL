@@ -167,7 +167,7 @@ def collect_batch(pipe, args, running_state, running_reward, buffer, count, work
                 state_tensor = torch.DoubleTensor(state)
                 states.append(state)
                 if args.policy == 'stochastic':
-                    action = get_stochastic_action(args, state_tensor, net, random=False)
+                    action = get_stochastic_action(args, state_tensor, net, random=True)
                 elif args.policy == 'deterministic':
                     action = get_deterministic_action(args, state_tensor, net)
                 actions.append(action)
