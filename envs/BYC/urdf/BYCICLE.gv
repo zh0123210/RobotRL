@@ -1,0 +1,17 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"FF_Link" [label="FF_Link"];
+"FW_Link" [label="FW_Link"];
+"RF_Link" [label="RF_Link"];
+"RW_Link" [label="RW_Link"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "front_fork" [label="xyz: 0.55 0 0.06 \nrpy: 0 -0 0"]
+"front_fork" -> "FF_Link"
+"FF_Link" -> "front_wheel" [label="xyz: 0 0 -0.55 \nrpy: 0 -0 0"]
+"front_wheel" -> "FW_Link"
+"base_link" -> "rear_fork" [label="xyz: -0.55 0 0.06 \nrpy: 0 -0 0"]
+"rear_fork" -> "RF_Link"
+"RF_Link" -> "rear_wheel" [label="xyz: 0 0 -0.55 \nrpy: 0 -0 0"]
+"rear_wheel" -> "RW_Link"
+}
